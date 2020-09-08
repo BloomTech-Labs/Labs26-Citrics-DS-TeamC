@@ -9,7 +9,7 @@ Finding a place to live is hard! Nomads struggle with finding the right city for
 [Docs](https://docs.labs.lambdaschool.com/data-science/)
 
 
-## Trello & Whimsical 
+## Trello & Flowchart 
 [Trello Board Citrics C](https://trello.com/b/PvrxsbYt/citrics-team-c)
 
 [Driftly Flowchart](https://whimsical.com/WRYEVkz4ZedhsaPeTjfDK5)
