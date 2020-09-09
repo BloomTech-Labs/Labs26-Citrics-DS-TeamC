@@ -18,7 +18,7 @@
 ## Weather
 
 #### Mike's exploration of weather api here:
-- [Mike's Notebook](www.google.com)<-- put your shareable link in the md file
+- [Mike's Notebook](https://colab.research.google.com/drive/1TlYFqOTEtjuewOFli5J7mDcJ0lBAgQcB?usp=sharing)<-- put your shareable link in the md file
 
 ## Jobs
 
