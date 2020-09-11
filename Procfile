@@ -1,0 +1,1 @@
+web: gunicorn "salty_app:create_app()"
