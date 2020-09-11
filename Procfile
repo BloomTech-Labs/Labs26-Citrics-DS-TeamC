@@ -1,1 +1,1 @@
-web: gunicorn "salty_app:create_app()"
+web: gunicorn "project/app/api:create_app()"
