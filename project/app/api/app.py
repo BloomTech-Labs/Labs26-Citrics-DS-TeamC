@@ -1,15 +1,15 @@
 from flask import Flask, render_template
-import requests
-import os
-import joblib
-import pandas as pd 
-import sklearn
+# import requests
+# import os
+# import joblib
+# import pandas as pd 
+# import sklearn
 import json
-import jsonify
-from dotenv import load_dotenv
+# import jsonify
+# from dotenv import load_dotenv
 
 
-app= Flask(__name__)
+app = Flask(__name__)
 # weather_json = json.loads(weather_json)
 @app.route('/weather')
 def weather():
