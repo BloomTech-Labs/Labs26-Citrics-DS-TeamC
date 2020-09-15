@@ -4,7 +4,6 @@ import plotly.express as px
 
 router = APIRouter()
 
-
 @router.get('/viz/{statecode}')
 async def viz(statecode: str):
     """
