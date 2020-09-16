@@ -7,7 +7,7 @@ from app.api import predict, viz, housing, jobs, weather
 app = FastAPI(
     title='DRIFTLY DS API',
     description='Access our DS data on US cities for job market, housing, and weather',
-    version='0.1',
+    version='0.2',
     docs_url='/',
 )
 
