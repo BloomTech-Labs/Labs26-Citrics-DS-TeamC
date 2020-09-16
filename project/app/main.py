@@ -17,7 +17,7 @@ origins = [
 
 app.include_router(predict.router)
 app.include_router(viz.router)
-# app.include_router(housing.router)
+app.include_router(housing.router)
 # app.include_router(jobs.router)
 app.include_router(weather.router)
 
