@@ -15,7 +15,8 @@ async def viz(user_queried_citystates: list):
     ### Response
     JSON string of all figures to render with [react-plotly.js](https://plotly.com/javascript/react/)
     """
-    housing = pd.read_csv(r'project\app\dbhousing_data_final.csv')
+
+    housing = pd.read_csv(r'C:\Users\Mike\LambdaSchool\labs\Labs26-Citrics-DS-TeamC\project\app\db\housing_data_final.csv')
 
     ## HOUSING data viz
     # input_list = ["Albany, NY", "San Francisco, CA", "Indianapolis, IN"]
