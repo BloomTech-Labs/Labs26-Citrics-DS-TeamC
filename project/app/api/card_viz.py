@@ -2,26 +2,26 @@ from fastapi import APIRouter, HTTPException
 import pandas as pd
 import plotly.express as px
 import json
+import os
 
 router = APIRouter()
 
 @router.post('/card_viz/')
 async def viz(user_queried_citystates: list):
-    """
-    Visualize state unemployment rate from [Federal Reserve Economic Data](https://fred.stlouisfed.org/) 📈
-    
+    """  
     ### Path Parameter (POST from front-end)
     list: A list of city-states the user queried in this format: ["Albany, NY", "San Francisco, CA", "Chicago, IL"]
 
     ### Response
     JSON string of all figures to render with [react-plotly.js](https://plotly.com/javascript/react/)
     """
+    housing = pd.read_csv('../db/housing_data_final.csv')
 
     ## HOUSING data viz
     # input_list = ["Albany, NY", "San Francisco, CA", "Indianapolis, IN"]
     idx = 0
     for idx in range(len(user_queried_citystates)):
-        temp = df[df['city_state']==user_queried_citystates[idx]]
+        temp = housing[housing['city_state'] == user_queried_citystates[idx]]
         temp = temp.sort_values('date')
         fig = px.line(temp, x='date', y='value', title=temp['city_state'].iloc[0])
         # fig_json = fig.to_json
