@@ -2,21 +2,28 @@ from fastapi import APIRouter, HTTPException
 import pandas as pd
 import plotly.express as px
 import json
-import os
 
 router = APIRouter()
 
+# relative_path = r'.\project\app\db\housing_data_final.csv'
+# # path2 = 'E:\Downloads\housing_data_final.csv'
+# housing = pd.read_csv(relative_path)
+
 @router.post('/card_viz/')
-async def viz(user_queried_citystates: list):
-    """  
+async def card_viz(user_queried_citystates: list):
+    """
     ### Path Parameter (POST from front-end)
     list: A list of city-states the user queried in this format: ["Albany, NY", "San Francisco, CA", "Chicago, IL"]
 
     ### Response
     JSON string of all figures to render with [react-plotly.js](https://plotly.com/javascript/react/)
     """
+    # for idx in range(len(user_queried_citystates)):
+    #     temp = user_queried_citystates[idx]
+        
 
-    housing = pd.read_csv('.\project\app\db\housing_data_final.csv')
+    relative_path = r'\app\db\housing_data_final.csv'
+    housing = pd.read_csv(relative_path)
 
     ## HOUSING data viz
     # input_list = ["Albany, NY", "San Francisco, CA", "Indianapolis, IN"]
@@ -27,7 +34,8 @@ async def viz(user_queried_citystates: list):
         fig = px.line(temp, x='date', y='value', title=temp['city_state'].iloc[0])
         # fig_json = fig.to_json
         idx += 1
-        return fig.to_json
+        # return fig.to_json
+        return user_queried_citystates
 
     # Return Plotly figure as JSON string
     # return fig.to_json()
