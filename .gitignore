@@ -4,6 +4,7 @@
 .pytest_cache
 .vscode
 __pycache__
+./project/app/db/*.csv
 
 # Elastic Beanstalk Files
 .elasticbeanstalk/*
