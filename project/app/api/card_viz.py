@@ -5,17 +5,8 @@ import json
 
 router = APIRouter()
 
-# relative_path = r'.\project\app\db\housing_data_final.csv'
-# # path2 = 'E:\Downloads\housing_data_final.csv'
-# housing = pd.read_csv(relative_path)
-
-relative_path = r'\app\db\housing_data_final.csv'
-housing = pd.read_csv(relative_path)
-
-
-
 @router.post('/card_viz/')
-def card_viz(user_queried_citystates: list):
+async def card_viz(user_queried_citystates: list):
     """
     ### Path Parameter (POST from front-end)
     list: A list of city-states the user queried in this format: ["Albany, NY", "San Francisco, CA", "Chicago, IL"]
@@ -54,3 +45,5 @@ def card_viz(user_queried_citystates: list):
         fig2 = create_housing_fig(num_city_states=2)
         fig3 = create_housing_fig(num_city_states=3)
         return fig1, fig2, fig3
+    else:
+        return {}
