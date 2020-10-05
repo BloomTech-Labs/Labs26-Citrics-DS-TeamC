@@ -6,6 +6,9 @@ branch-defaults:
     environment: driftly-ds-api-team
     group_suffix: null
 environment-defaults:
+  c-ds-2:
+    branch: null
+    repository: null
   c-ds-api:
     branch: null
     repository: null
