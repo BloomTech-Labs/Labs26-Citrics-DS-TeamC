@@ -1,6 +1,6 @@
 branch-defaults:
   master:
-    environment: c-ds-2
+    environment: driftly-teamc
     group_suffix: null
   mtoce:
     environment: driftly-ds-api-team
@@ -13,7 +13,7 @@ environment-defaults:
     branch: null
     repository: null
 global:
-  application_name: c-ds-2
+  application_name: drfitly-teamc
   branch: null
   default_ec2_keyname: null
   default_platform: Docker
