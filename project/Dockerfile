@@ -1,6 +1,3 @@
-# FROM python:3.8-alpine
-# RUN apk update && apk add postgresql-dev gcc python3-dev musl-dev
-
 # pull official base image
 FROM python:3.8-slim-buster
 
@@ -12,7 +9,6 @@ RUN python -m pip install --upgrade pip
 COPY ./requirements.txt .
 RUN pip install -r requirements.txt
 RUN pip install python-dotenv
-# RUN pip install psycopg2
 RUN pip install plotly.express
 RUN pip install sqlalchemy
 RUN pip install psycopg2-binary
