@@ -105,7 +105,14 @@ async def housing_viz(user_queried_citystates: list):
     fig = px.line(subsetH, x='date', y='value', labels={'value': r"Price ($)", 'date': 'Date'}, color='City, State', title='Average Single Family Residential/Co-op/Condo Housing Value').for_each_trace(lambda t: t.update(name=t.name.split("=")[-1]))
 
     # Update Layout to move legend above plot
-    fig.update_layout(legend=dict(orientation="h",yanchor="bottom",y=1.02,xanchor="right",x=1))   # legend above graph top right
+    fig.update_layout(legend=dict(orientation="h",yanchor="bottom",y=1.02,xanchor="right",x=1),
+                    xaxis = dict(
+                      tickmode = 'array',
+                      tick0 = 1,
+                      dtick = 1,
+                      tickvals = [1996, 1998, 2000, 2002, 2004, 2006, 2008, 2010, 2012, 2014, 2016, 2018, 2020],
+                      ticktext = ['1996', '1998', '2000', '2002', '2004', '2006', '2008', '2010', '2012', '2014', '2016', '2018', '2020']
+                  ))   # legend above graph top right
     fig.write_image("fig1.png")       # check image for debug
     housing_json = fig.to_json()    # save figure to JSON object to pass to WEB
     
