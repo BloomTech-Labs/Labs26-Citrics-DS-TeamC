@@ -105,7 +105,14 @@ async def wage_trade_transport_viz(user_queried_citystates: list):
         industry = subsetJ[subsetJ['Industry']==industry_name]
         industry = industry.sort_values('date')
         fig = px.line(industry, x='date', y='Average Weekly Wage', labels={'Average Weekly Wage': 'Average Weekly Wage ($)', 'date': 'Date'}, color='County, State', title=f"{industry_name}: Average Weekly Wage").for_each_trace(lambda t: t.update(name=t.name.split("=")[-1]))
-        fig.update_layout(legend=dict(orientation="h",yanchor="bottom",y=1.02,xanchor="right",x=1))   # legend above graph top right
+        fig.update_layout(legend=dict(orientation="h",yanchor="bottom",y=1.02,xanchor="right",x=1),
+                    xaxis = dict(
+                      tickmode = 'array',
+                      tick0 = 1,
+                      dtick = 1,
+                      tickvals = [2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020],
+                      ticktext = ['2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020']
+                  ))   # legend above graph top right
         fig.write_image("fig1.png")
         jobs_json = fig.to_json()    # save figure to JSON object to pass to WEB
         return jobs_json

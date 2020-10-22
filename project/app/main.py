@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
 
-from app.api import predict, viz, cc, population, county_city, housing, housing_updated, jobs, jobs_updated, weather, weather_updated, temp_viz, precip_viz, snow_viz, uvindex_viz, humidity_viz, wind_viz, covid, covid_viz, housing_viz, wage_goods_viz, wage_mining_viz, wage_manufacturing_viz, wage_construction_viz, wage_trade_transport_viz, wage_financial_viz, wage_business_viz, wage_edu_health_viz, wage_hospitality_viz, wage_information_viz, wage_service_viz, wage_other_viz, wage_unclassified_viz
+from app.api import predict, pred_housing, viz, cc, population, county_city, housing, housing_updated, jobs, jobs_updated, weather, weather_updated, temp_viz, precip_viz, snow_viz, uvindex_viz, humidity_viz, wind_viz, covid, covid_viz, housing_viz, wage_goods_viz, wage_mining_viz, wage_manufacturing_viz, wage_construction_viz, wage_trade_transport_viz, wage_financial_viz, wage_business_viz, wage_edu_health_viz, wage_hospitality_viz, wage_information_viz, wage_service_viz, wage_other_viz, wage_unclassified_viz
 
 app = FastAPI(
     title='DRIFTLY DS API',
@@ -15,8 +15,9 @@ origins = [
     "http://localhost:8080",
     ]
 
-app.include_router(predict.router)
-app.include_router(viz.router)
+# app.include_router(predict.router)
+app.include_router(pred_housing.router)
+# app.include_router(viz.router)
 app.include_router(cc.router)
 app.include_router(population.router)
 app.include_router(county_city.router)
